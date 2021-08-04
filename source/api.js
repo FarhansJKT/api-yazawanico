@@ -103,7 +103,7 @@ source.get('/base', async (req, res, next) => {
 })
 
 // IMAGE API'S : SFW
-source.get('/image/sfw/neko', (req, res, next) => {
+source.get('/image/sfw/neko', async (req, res, next) => {
 fetch(encodeURI(`https://nekos.life/api/v2/img/neko`))
         .then(response => response.json())
         .then(data => {
@@ -118,7 +118,7 @@ fetch(encodeURI(`https://nekos.life/api/v2/img/neko`))
          .catch(e => {})
 })
 
-source.get('/image/swf/waifu', (req, res, next) => {
+source.get('/image/swf/waifu', async (req, res, next) => {
 fetch(encodeURI(`https://api.waifu.pics/sfw/waifu`))
         .then(response => response.json())
         .then(data => {
@@ -133,7 +133,7 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/waifu`))
          .catch(e => {})
 })
 
-source.get('/image/swf/cry', (req, res, next) => {
+source.get('/image/swf/cry', async (req, res, next) => {
 fetch(encodeURI(`https://api.waifu.pics/sfw/cry`))
         .then(response => response.json())
         .then(data => {
@@ -148,7 +148,7 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/cry`))
          .catch(e => {})
 })
 
-source.get('/image/swf/hug', (req, res, next) => {
+source.get('/image/swf/hug', async (req, res, next) => {
 fetch(encodeURI(`https://api.waifu.pics/sfw/hug`))
         .then(response => response.json())
         .then(data => {
@@ -163,7 +163,7 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/hug`))
          .catch(e => {})
 })
 
-source.get('/image/swf/kiss', (req, res, next) => {
+source.get('/image/swf/kiss', async (req, res, next) => {
 fetch(encodeURI(`https://api.waifu.pics/sfw/kiss`))
         .then(response => response.json())
         .then(data => {
