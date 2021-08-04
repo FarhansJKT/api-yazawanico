@@ -178,6 +178,7 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/kiss`))
          .catch(e => {})
 })
 
+// EDUKASI API'S
 source.get('/brainly', async (req, res, next) => {
 
 	var text = req.query.text;
