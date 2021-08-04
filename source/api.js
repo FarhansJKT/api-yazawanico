@@ -92,7 +92,7 @@ source.get('/base', async (req, res, next) => {
 					message: "tambahkan parameter encode/decode"
 				})
 			} else {
-				res.json(loghandler.error)
+				res.json(logHandler.error)
 			}
 })
 
