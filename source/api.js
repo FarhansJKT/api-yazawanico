@@ -22,7 +22,7 @@ var cheerio = require('cheerio');
 var request = require('request');
 var yts = require('yt-search')
 var source = express.Router();
-
+var brainly = require('brainly-scraper-v2')
 var { color, bgcolor } = require(__path + '/lib/color.js');
 
 var {
@@ -36,6 +36,12 @@ logHandler = {
         status: false,
         code: 406,
         message: 'masukan parameter url !'
+    },
+	noText: {
+        status: false,
+        Author: `${creator}`,
+        code: 406,
+        message: 'masukan parameter text'
     },
   error: {
         status: false,
@@ -166,6 +172,25 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/kiss`))
                  Author : `${creator}`,
                  result : {
                      url : `${data.url}`
+                 },
+             })
+         })
+         .catch(e => {})
+})
+
+source.get('/brainly', async (req, res, next) => {
+
+	var text = req.query.text;
+
+	if(!text) return res.json(logHandler.noText)
+	brainly(text)
+	.then(response => response.json())
+        .then(data => {
+             res.json({
+                 status : true,
+                 Author : `${creator}`,
+                 result : {
+                     data : `${data.data}`
                  },
              })
          })
