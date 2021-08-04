@@ -208,7 +208,7 @@ source.get('/edu/wikipedia', async (req, res, next) => {
 
 	var q = req.query.q;
 
-	if(!text) return res.json(logHandler.gadaq)
+	if(!q) return res.json(logHandler.gadaq)
 	fetch(encodeURI(`https://docs-ririapi.herokuapp.com/api/wiki?q=${q}`))
 	.then(response => response.json())
         .then(data => {
