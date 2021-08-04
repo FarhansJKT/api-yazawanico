@@ -43,6 +43,12 @@ logHandler = {
         code: 406,
         message: 'masukan parameter text'
     },
+        Gadaq: {
+        status: false,
+        Author: `${creator}`,
+        code: 406,
+        message: 'masukan parameter q'
+    },
   error: {
         status: false,
         message: 'mungkin sedang dilakukan perbaikan'
@@ -179,7 +185,7 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/kiss`))
 })
 
 // EDUKASI API'S
-source.get('/brainly', async (req, res, next) => {
+source.get('/edu/brainly', async (req, res, next) => {
 
 	var text = req.query.text;
 
@@ -193,6 +199,23 @@ source.get('/brainly', async (req, res, next) => {
                  result : {
                      data : `${data.data}`
                  },
+             })
+         })
+         .catch(e => {})
+})
+
+source.get('/edu/wikipedia', async (req, res, next) => {
+
+	var q = req.query.q;
+
+	if(!text) return res.json(logHandler.gadaq)
+	fetch(encodeURI(`https://docs-ririapi.herokuapp.com/api/wiki?q=${text}`))
+	.then(response => response.json())
+        .then(data => {
+             res.json({
+                 status : true,
+                 Author : `${creator}`,
+                 Arti : `${data.result}`
              })
          })
          .catch(e => {})
