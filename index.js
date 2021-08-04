@@ -6,8 +6,8 @@ var express = require('express'),
 const PORT = process.env.PORT || 8080 || 5000 || 3000
 var { color } = require('./lib/color.js')
 
-var mainrouter = require('./routes/main'),
-    apirouter = require('./routes/api')
+var mainrouter = require('./source/main'),
+    apirouter = require('./source/api')
 
 var app = express()
 app.enable('trust proxy');
