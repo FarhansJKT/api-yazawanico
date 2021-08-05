@@ -9,17 +9,17 @@ var { color } = require('./lib/color.js')
 var mainrouter = require('./source/main'),
     apirouter = require('./source/api')
 
-var source = express()
-source.enable('trust proxy');
-source.set("json spaces",2)
-source.use(cors())
-source.use(secure)
-source.use(express.static("public"))
+var app = express()
+app.enable('trust proxy');
+app.set("json spaces",2)
+app.use(cors())
+app.use(secure)
+app.use(express.static("public"))
 
-source.use('/', mainrouter)
-source.use('/api', apirouter)
+app.use('/', mainrouter)
+app.use('/api', apirouter)
 
-source.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(color("Server running on port " + PORT,'green'))
 })
 
