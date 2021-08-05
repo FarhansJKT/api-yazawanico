@@ -51,7 +51,7 @@ logHandler = {
     },
   error: {
         status: false,
-        message: 'mungkin sedang dilakukan perbaikan'
+        message: 'eror mungkin sedang ada perbaikan'
     }
   
 }
