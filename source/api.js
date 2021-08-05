@@ -220,3 +220,5 @@ source.get('/edu/wikipedia', async (req, res, next) => {
          })
          .catch(e => {})
 })
+
+module.exports = source
