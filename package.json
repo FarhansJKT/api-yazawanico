@@ -39,6 +39,7 @@
     "mongodb": "^3.6.3",
     "monk": "^7.3.3",
     "morgan": "^1.10.0",
+    "hxz-api": "^1.0.1",
     "needle": "^2.6.0",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2",
