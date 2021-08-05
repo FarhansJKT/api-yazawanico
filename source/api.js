@@ -186,6 +186,39 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/kiss`))
          .catch(e => {})
 })
 
+// WIBU APIS TUKANG COMLY
+source.get('/image/nswf/neko', async (req, res, next) => {
+fetch(encodeURI(`https://api.waifu.pics/sfw/neko`))
+        .then(response => response.json())
+        .then(data => {
+             res.json({
+                 status : true,
+                 message : `jangan keseringan comly',
+                 Author : `${creator}`,
+                 result : {
+                     url : `${data.url}`
+                 },
+             })
+         })
+         .catch(e => {})
+})
+
+source.get('/image/nswf/waifu', async (req, res, next) => {
+fetch(encodeURI(`https://api.waifu.pics/sfw/waifu`))
+        .then(response => response.json())
+        .then(data => {
+             res.json({
+                 status : true,
+                 message : `jangan keseringan comly',
+                 Author : `${creator}`,
+                 result : {
+                     url : `${data.url}`
+                 },
+             })
+         })
+         .catch(e => {})
+})
+
 // EDUKASI API'S
 source.get('/edu/brainly', async (req, res, next) => {
 
