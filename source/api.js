@@ -23,6 +23,7 @@ var request = require('request');
 var yts = require('yt-search')
 var source = express.Router();
 var brainly = require('brainly-scraper-v2')
+var hx = require('hxz-api');
 var { color, bgcolor } = require(__path + '/lib/color.js');
 
 var {
@@ -217,6 +218,41 @@ source.get('/edu/wikipedia', async (req, res, next) => {
                  status : true,
                  Author : `${creator}`,
                  Arti : `${data.result}`
+             })
+         })
+         .catch(e => {})
+})
+
+// DOWNLOADER API'S
+
+source.get('/downloader/fb', async (req, res, next) => {
+	var link = req.query.url;
+	if(!text) return res.json(logHandler.notUrl)
+	hx.fbdown(link)
+	.then(response => response.json())
+        .then(data => {
+             res.json({
+                 status : true,
+                 Author : `${creator}`,
+                 result : {
+                     link : `${data.url}`
+                 },
+             })
+         })
+         .catch(e => {})
+})
+
+source.get('/downloader/twt', async (req, res, next) => {
+	var link = req.query.url;
+	if(!text) return res.json(logHandler.notUrl)
+	hx.twitter(link)
+        .then(data => {
+             res.json({
+                 status : true,
+                 Author : `${creator}`,
+                 result : {
+                   data : `${data}`
+                 },
              })
          })
          .catch(e => {})
