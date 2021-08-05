@@ -258,4 +258,20 @@ source.get('/downloader/twt', async (req, res, next) => {
          .catch(e => {})
 })
 
+source.get('/downloader/tiktok', async (req, res, next) => {
+	var link = req.query.url;
+	if(!text) return res.json(logHandler.notUrl)
+	hx.ttdownloader(link)
+        .then(data => {
+             res.json({
+                 status : true,
+                 Author : `${creator}`,
+                 nowm : `${data.nowm}`,
+                 wm : `${data.wm}`
+                 audio : `${data.audio}`
+             })
+         })
+         .catch(e => {})
+})
+
 module.exports = source
