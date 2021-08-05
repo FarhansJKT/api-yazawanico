@@ -307,4 +307,29 @@ source.get('/downloader/tiktok', async (req, res, next) => {
          .catch(e => {})
 })
 
+// ISLAMIC API'S
+source.get('/islamic/niatsholat', (req, res) => {
+    res.sendFile(__path + '/src/NiatSholat.json')
+})
+
+source.get('/islamic/niatshubuh', (req, res) => {
+    res.sendFile(__path + '/src/NiatShubuh.json')
+})
+
+source.get('/islamic/niatdzuhur', (req, res) => {
+    res.sendFile(__path + '/src/NiatDzuhur.json')
+})
+
+source.get('/islamic/niatashar', (req, res) => {
+    res.sendFile(__path + '/src/NiatAshar.json')
+})
+
+source.get('/islamic/niatmagrib', (req, res) => {
+    res.sendFile(__path + '/src/NiatMagrib.json')
+})
+
+source.get('/islamic/niatisya', (req, res) => {
+    res.sendFile(__path + '/src/Niatisya.json')
+})
+
 module.exports = source
