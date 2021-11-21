@@ -193,7 +193,7 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/neko`))
         .then(data => {
              res.json({
                  status : true,
-                 message : `jangan keseringan comly',
+                 message : `jangan keseringan comly`,
                  Author : `${creator}`,
                  result : {
                      url : `${data.url}`
@@ -209,7 +209,7 @@ fetch(encodeURI(`https://api.waifu.pics/sfw/waifu`))
         .then(data => {
              res.json({
                  status : true,
-                 message : `jangan keseringan comly',
+                 message : `jangan keseringan comly`,
                  Author : `${creator}`,
                  result : {
                      url : `${data.url}`
@@ -308,6 +308,7 @@ source.get('/downloader/tiktok', async (req, res, next) => {
 })
 
 // ISLAMIC API'S
+
 source.get('/islamic/niatsholat', (req, res) => {
     res.sendFile(__path + '/src/NiatSholat.json')
 })
